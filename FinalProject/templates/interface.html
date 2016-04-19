@@ -1,0 +1,37 @@
+{% extends 'dashbord_base.html' %}
+{% block content %}
+<div class="contain">
+        <br></br><h3 > HOST - {{ ip_addr }} </h3><br></br>
+        <style type="text/css">
+        .tg  {border-collapse:collapse;border-spacing:0;}
+        .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+        .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+        </style>
+        <div class="i">
+        <table class="tg">
+          <tr>
+            <th class="row-1 row-ID">Interface</th>
+                <th class="row-1 row-ID">IP Address</th>
+                    <th class="row-1 row-ID">Status</th>
+                    <th class="row-1 row-ID">Protocol</th>
+                    <th class="row-1 row-ID">Date and Time</th>
+          </tr>
+          <div class="j">
+          {% for item in router %}
+            <tr>
+                <td>{{ item.interface_name }}</td>
+                    <td>{{ item.ip_addr }}</td>
+                    <td>{{ item.admin_up }}</td>
+                    <td>{{ item.protocol_up }}</td>
+                    <td>{{ item.t_stamp }}</td>
+            </tr>
+          {% endfor %}
+          
+          </div>
+        </table>
+    </div>  
+    </div>
+
+
+
+{% endblock %}

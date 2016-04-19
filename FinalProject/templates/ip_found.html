@@ -1,0 +1,26 @@
+{% extends 'dashbord_base.html' %}
+{% block content %}
+<div class="contain">
+	<br></br><h3 > HOST - {{ ip_addr }} </h3><br></br>
+   	{% if check %}
+
+   		<h3> Found {{ check }} in VRF {{ vrf }} </h3><br></br>
+   		<p>Learn via</p><br></br>
+   		<ul>
+   			<li><b>Protocol</b> - {{ allpara.protocol}}</li>
+   			<li><b>Nexthop Address</b> - {{ allpara.nexthop}}</li>
+
+   		</ul>
+   		<br></br>
+   		<a href="/router/iplookup/"> Go back</a>
+   	{% endif %}
+   	{% if error %}
+
+   		<h3> IP {{ error }} Does not Exits in VRF {{ vrf }} </h3><br></br>
+   		<a href="/router/iplookup/"> Go back</a>
+   	{% endif %}
+
+
+</div>
+
+{%  endblock %}

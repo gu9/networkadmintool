@@ -1,0 +1,24 @@
+{% extends 'dashbord_base.html' %}
+{% block content %}
+<div class="contain">
+	<br></br><h3 > HOST - {{ ip_addr }} </h3><br></br>
+   <form  data-parsley-validate name="myform"  method='post' id="form1" >{% csrf_token %}
+				<label>IP Address<br></br> {{ form.ip_field }}</label><br></br>
+
+				<label>Mask (format:255.X.X.X)<br></br>{{ form.mask_field }}</label>
+				<br></br>
+   {% if allvrfs %}
+<select name="my_options"  >
+	{% for item in allvrfs %}
+  <option value="{{item.vrf_name}}">{{item.vrf_name}}</option>
+
+  {% endfor %}
+  
+</select>
+<p> <input class="submit" type="submit" value="Search IP"/></p>
+{% endif %}
+</form>
+
+</div>
+
+{%  endblock %}

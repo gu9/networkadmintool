@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+nav class="menu">
+		<ul>
+			<li><a href="">Home</a></li>
+			<li><a href="">Connect(SSH)</a></li>
+			<li><a href="/router/form/">Add Host</a></li>
+			<li><a href="">Help</a></li>
+		</ul>
+</nav>
+<div class="content">
+		<div id="first">
+			<form action='' method='post'> {% csrf_token %}
+				{{ form.as_p }}
+			</form>
+			</div>
+		</div>
+
+
+{% endblock %}

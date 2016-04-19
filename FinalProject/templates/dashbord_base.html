@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/side_file.css' %}">
+
+	<meta charset="UTF-8">
+	
+	</head>
+	<body>
+		<nav class="menu">
+		<ul>
+			<li><a href="/router/vrfshow/">Show IP VRF</a></li>
+			<li><a href="/router/vrfdropdown/">List of Routes from VRF's </a></li>
+			<li><a href="/router/iplookup/">IP Lookup</a></li>
+			<li><a href="/router/protocol/">Routing Protocols</a></li>
+			<li><a href="/router/interface/">Interface Lookup</a></li>
+			<li><a href="/router/parameter/">Router Performance</a></li>
+			<li><a href="/router/logoutview/">Log out </a></li>
+		</ul>
+</nav>
+		{% block content %}
+		
+	
+	{% endblock %}
+	</body>
+
+</html>

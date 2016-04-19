@@ -1,0 +1,45 @@
+{% extends 'dashbord_base.html' %}
+
+{% block content %}
+
+
+	<div class="contain">
+		<br></br><h3 > HOST - {{ ip_addr }} </h3><br></br>
+	    <style type="text/css">
+		.tg  {border-collapse:collapse;border-spacing:0;}
+		.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+		.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
+	    </style>
+	    <div class="i">
+		<table class="tg">
+		  <tr>
+		    <th class="tg-031e"><b>Hostname</b></th>
+		    <th class="tg-031e"><b>Vendor</b></th>
+		    <th class="tg-031e"><b>Model</b></th>
+		    <th class="tg-031e"><b>Image</b></th>
+		     <th class="tg-031e"><b>Version</b></th>
+		    <th class="tg-031e"><b>CPU Usage</b></th>
+		    <th class="tg-031e"><b>CPU Speed</b></th>
+		    <th class="tg-031e"><b>Memory Total</b></th>
+		    <th class="tg-031e"><b>Memory Used</b></th>
+		  </tr>
+		  <div class="j">
+		  {% for item in router %}
+			<tr>
+				<td class="tg-031e">{{ item.host_name }}</td>
+				<td class="tg-031e">{{ item.vendor_name }}</td>
+				<td class="tg-031e">{{ item.model_name }}</td>
+				<td class="tg-031e">{{ item.image_name }}</td>
+				<td class="tg-031e">{{ item.version_name }}</td>
+				<td class="tg-031e">{{ item.cpu_usage }}%</td>
+				<td class="tg-031e">{{ item.cpu_speed }}Mhz</td>
+				<td class="tg-031e">{{ item.mem_tot }}K</td>
+				<td class="tg-031e">{{ item.mem_used }}K</td>
+		 	</tr>
+		  {% endfor %}
+		  
+		  </div>
+	    </table>
+	</div>	
+	</div>
+	{% endblock %}

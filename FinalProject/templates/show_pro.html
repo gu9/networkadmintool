@@ -1,0 +1,13 @@
+{% extends 'dashbord_base.html' %}
+{% block content %}
+
+<div class="contain">
+	{% if data %}
+
+	<br></br><h3 > HOST - {{ ip_addr }} </h3><br></br>
+	<h3>These Protocols are configured </h3>
+	<br></br><p><b>{{ data.outer_protocols }}</b></p>
+	{% endif %}
+
+</div>
+{% endblock %}

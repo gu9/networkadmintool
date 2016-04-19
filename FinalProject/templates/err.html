@@ -1,0 +1,36 @@
+{% extends 'dashbord_base.html' %}
+{% block content %}
+<div class="contain">
+	<br></br><h3 > Error occured while preocessing Request </h3><br></br>
+
+	{% if allhostrequest %}
+	<h4>SSH Connection Error ,Please Try it again </h4><br></br>
+	{% endif %}
+
+	{% if fieldempty %}
+   	<h4>Please check the input values,try again </h4><br></br>
+   	<ul>
+   		<li><b>Please Enter valid IP address</b></li>
+   		<li><b>Please Enter valid Subnet Mask</b></l1>
+   	</ul>
+   	<br></br>
+   	
+   	{% endif %}
+
+   	{% if loginfirst %}
+   	<h4>Try to SSH First !,Please Try to Connect to router </h4><br></br>
+   	{% endif %}
+
+   	{% if none_check %}
+   	<h4>Input fields are empty or Invalid input by User,Please Try it again!</h4><br></br>
+   	{% endif %}
+
+      {% if ipinvalid %}
+      <h4>IP Invalid ,Please Try it again!</h4><br></br>
+      <a href="/router/index/">Go back</a>
+      {% endif %}
+
+
+</div>
+
+{%  endblock %}

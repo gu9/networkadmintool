@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav class="menu">
+		<ul>
+			<li><a href="/router/index/">Home</a></li>
+			<li><a href="/router/form/">Add Another Host</a></li>
+			<li><a href="">Help</a></li>
+		</ul>
+</nav>
+<div class="contain">
+	<br></br>
+	<h4>Error While Processing Request</h4>
+	<br></br>
+{% if ipinvalid %}
+      <h4>IP Invalid ,Please Try it again!</h4><br></br>
+      <a href="/router/form/">Go back</a>
+      {% endif %}
+
+
+      {% if allhostrequest %}
+      <h4>SSH Error ,Try to ping the host  </h4><br></br>
+      <a href="/router/index/">Go back</a>
+      {% endif %}
+  </div>
+{% endblock %}

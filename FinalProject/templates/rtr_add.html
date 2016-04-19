@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav class="menu">
+		<ul>
+			<li><a href="/router/index/">Home</a></li>
+			<li><a href="/router/form/">Add Another Host</a></li>
+			<li><a href="">Help</a></li>
+		</ul>
+</nav>
+	
+	<div class="content">
+		<div class="pad1">
+			<div id="first">
+			<form  data-parsley-validate name="myform"  method='post' id="form1" >{% csrf_token %}
+				<label>HOST NAME{{ form.host_name }}</label>
+				<label><br>IP</br>{{ form.host_ip }}</label>
+				<label><br>Username</br>{{ form.user_name}}</label>
+				<label><br>PASSWORD</br>{{ form.password }}</label>
+<input class="submit" type='submit' value='Submit' />
+</form>
+		</div>
+	</div>
+</div>
+
+	{% endblock %}
+
+
